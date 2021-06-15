@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">cmir2469.backend.utils.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:D:/Anul_3_Sem_2/Databse/Database</property>
+        <property name="hibernate.jdbc.time_zone">Europe/Bucharest</property>
+        <property name="hibernate.connection.date_class">TEXT</property>
+        <property name="hibernate.connection.date_string_format">yyyy-MM-dd HH:mm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping resource="chat.xml"/>
+        <mapping class ="cmir2469.backend.domain.Comment"/>
+        <mapping class="cmir2469.backend.domain.Friend"/>
+        <mapping class="cmir2469.backend.domain.FriendStatus"/>
+        <mapping class="cmir2469.backend.domain.Post"/>
+        <mapping class="cmir2469.backend.domain.Tag"/>
+        <mapping class="cmir2469.backend.domain.Reaction"/>
+        <mapping resource="postTag.xml"/>
+        <mapping class="cmir2469.backend.domain.User"/>
+        <mapping class="cmir2469.backend.domain.UserDetail"/>
+        <mapping resource="userTag.xml"/>
+
+
+
+    </session-factory>
+</hibernate-configuration>
+

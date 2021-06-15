@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cmir2469.backend.domain.Reaction" table="Reaction">
+        <id name="ID" column="ID"/>
+        <property name="postID" column="PostID" />
+        <property name="userID" column="UserID" />
+        <property name="status" column="Status"/>
+
+
+
+
+    </class>
+</hibernate-mapping>

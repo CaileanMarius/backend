@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cmir2469.backend.domain.User" table="User">
+        <id name="ID" column="ID"/>
+        <property name="username" column="Username"/>
+        <property name="password" column="Password"/>
+        <property name="email" column="Email"/>
+        <property name="followers" column="Followers"/>
+        <property name="following" column="Following"/>
+
+        <set name="friends" table="Friend"
+             inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="UserID" not-null="true" />
+            </key>
+            <one-to-many entity-name="cmir2469.backend.domain.Friend"/>
+
+        </set>
+
+
+        <many-to-one name="userDetail" class="cmir2469.backend.domain.UserDetail"
+                    cascade="all" unique="true"></many-to-one>
+
+
+    </class>
+</hibernate-mapping>

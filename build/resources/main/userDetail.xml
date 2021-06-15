@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cmir2469.backend.domain.UserDetail" table="UserDetail">
+        <id name="ID" column="UserID"/>
+        <property name="firstName" column="FirstName"/>
+        <property name="lastName" column="LastName"/>
+        <property name="photo" column="Photo"/>
+        <property name="birthday" column="Birthday"/>
+        <property name="description" column="Description"/>
+
+
+        <many-to-one name = "user" column = "UserID" unique="true"
+                     class="cmir2469.backend.domain.User" not-null="true" cascade="all" insert="false" update="false"/>
+
+
+
+    </class>
+</hibernate-mapping>

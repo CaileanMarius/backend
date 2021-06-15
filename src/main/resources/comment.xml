@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cmir2469.backend.domain.Comment" table="Comment">
+        <id name="ID" column="ID"/>
+        <property name="userID" column="UserID"/>
+        <property name="postID" column="PostID"/>
+        <property name="description" column="Description"/>
+        <property name="createdDate" column="CreatedDate"/>
+
+
+
+    </class>
+</hibernate-mapping>

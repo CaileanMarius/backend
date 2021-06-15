@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="cmir2469.backend.domain.Friend" table="Friend">
+        <id name="ID" column="ID"/>
+        <property name="userID" column="UserID" />
+        <property name="userFriendID" column="UserFriendID" />
+        <property name="friendStatusID" column="FriendStatusID"/>
+
+        <many-to-one name="user" insert="false" update="false" class="cmir2469.backend.domain.User" fetch="select">
+            <column name="UserID" not-null="true" />
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>
